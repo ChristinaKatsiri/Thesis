@@ -38,7 +38,7 @@ import textwrap
 import openai
 
 
-reviews_df = pd.read_csv("C:/Users/katsi/Desktop/paradotea_local/Hotel_Reviews.csv", sep = ',')
+reviews_df = pd.read_csv("Hotel_Reviews.csv", sep = ',')
 reviews_df["review_total"]=reviews_df["Negative_Review"] + reviews_df["Positive_Review"]
 reviews_df = reviews_df.sample(frac = 0.005, replace = False, random_state=42)
 reviews_df["review_total"] = reviews_df["review_total"].fillna('')
@@ -1011,7 +1011,7 @@ values1 = list(reviews_df.Hotel_Name.drop_duplicates(keep='first'))
 values2=('view graphs','view all reviews','check reviews and tags','view positive reviews','view negative reviews','view sum up of the reviews')
 # Add image file
 from PIL import ImageTk, Image
-bg = ImageTk.PhotoImage(Image.open("C:/Users/katsi/Desktop/paradotea_local/pexels-pixabay-87651.jpg")) 
+bg = ImageTk.PhotoImage(Image.open("pexels-pixabay-87651.jpg")) 
   
 # Show image using label 
 label1 = Label( root, image = bg) 
